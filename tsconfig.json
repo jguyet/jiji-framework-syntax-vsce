@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+      "declaration": false,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "lib": [
+        "es6",
+        "dom",
+        "es2019"
+      ],
+      "allowJs": true,
+      //"noEmit": true // Do not compile the JS (or TS) files in this project on build
+      "noUnusedLocals": true,
+      "noUnusedParameters" : true,
+      "skipLibCheck": false,
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "./dist/",
+      "target": "es2019",
+      "baseUrl": ".",
+      "strict": true,
+      "sourceMap": true
+    },
+    "files": [
+      "./scripts/main.js"
+    ],
+    "include": [
+      "./scripts/**/*"
+    ],
+    "exclude": [
+      "**/*.spec.js",
+      "**/*.spec.ts"
+    ]
+  }
+  

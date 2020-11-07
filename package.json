@@ -1,0 +1,71 @@
+{
+  "name": "jiji-framework-syntax",
+  "displayName": "jiji-framework-syntax",
+  "description": "Syntax highlighting in es6 multiline strings for Jiji framework html syntax",
+  "version": "1.0.0",
+  "publisher": "Jguyet",
+  "icon": "docs/jiji-framework-logo.png",
+  "engines": {
+    "vscode": "^1.19.0"
+  },
+  "galleryBanner": {
+    "color": "#dedede",
+    "theme": "light"
+  },
+  "repository": {
+    "url": "https://github.com/jguyet/jiji-framework-syntax"
+  },
+  "bugs": {
+    "url": "https://github.com/jguyet/jiji-framework-syntax/issues"
+  },
+  "main": "./scripts/main.js",
+  "scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -watch -p ./"
+	},
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "javascript",
+    "es6",
+    "es6-string-html",
+    "html",
+    "jiji",
+    "jiji-framework-syntax"
+  ],
+  "activationEvents": [
+    "onCommand:jiji.insertController"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "jiji.insertController",
+        "title": "Insert jiji controller",
+        "category": "HTML"
+      }
+    ],
+    "grammars": [
+      {
+        "injectTo": [
+          "source.html",
+          "source.js",
+          "source.js.jsx",
+          "source.jsx",
+          "source.ts",
+          "source.tsx",
+          "source.vue",
+          "source.svelte",
+          "text.html"
+        ],
+        "scopeName": "inline.es6-html",
+        "path": "./syntaxes/es6-inline-html.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.html": "html"
+        }
+      }
+    ]
+  }
+}
