@@ -1,5 +1,7 @@
-# ES6 String HTML 
-> [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html)
+# JIJI FRAMEWORK SYNTAX
+<img src="https://github.com/jguyet/jiji-framework-syntax-vsce/raw/master/docs/jiji-framework-logo.png" with="70" height="70">
+
+> [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=Jguyet.jiji-framework-syntax)
 
 Adds syntax highlight support for code, placed inner javascript back quote:
 - HTML (incl. html in jiji controller)
@@ -14,7 +16,7 @@ Manage syntax for using Jiji Framework
 
 Syntax inner back quotes of your controllers innerHTML `<div></div>` :
 
-![Screen](docs/1.png)
+<img src="https://github.com/jguyet/jiji-framework-syntax-vsce/raw/master/docs/1.png">
 
 ## Requirements
 
