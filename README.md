@@ -35,8 +35,6 @@ module.exports = /* html */`
 `;
 ````
 
-<img src="https://github.com/jguyet/jiji-framework-syntax-vsce/raw/master/docs/1.png">
-
 ## Requirements
 
 - Visual Studio Code v1.19.0 recommended
