@@ -2,7 +2,7 @@
   "name": "jiji-framework-syntax",
   "displayName": "jiji-framework-syntax",
   "description": "Syntax highlighting in es6 multiline strings for Jiji framework html syntax",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "publisher": "Jguyet",
   "icon": "docs/jiji-framework-logo.png",
   "engines": {
@@ -13,10 +13,10 @@
     "theme": "light"
   },
   "repository": {
-    "url": "https://github.com/jguyet/jiji-framework-syntax"
+    "url": "https://github.com/jguyet/jiji-framework-syntax-vsce"
   },
   "bugs": {
-    "url": "https://github.com/jguyet/jiji-framework-syntax/issues"
+    "url": "https://github.com/jguyet/jiji-framework-syntax-vsce/issues"
   },
   "main": "./scripts/main.js",
   "scripts": {
@@ -35,7 +35,8 @@
     "es6-string-html",
     "html",
     "jiji",
-    "jiji-framework-syntax"
+    "jiji-framework-syntax",
+    "jiji-js"
   ],
   "activationEvents": [
     "onCommand:jiji.insertController"
@@ -51,20 +52,30 @@
     "grammars": [
       {
         "injectTo": [
-          "source.html",
+            "text.html"
+        ],
+        "scopeName": "inline.jiji-in-html",
+        "path": "./syntaxes/jiji-in-html.json",
+        "embeddedLanguages": {
+            "meta.embedded.block.html": "html",
+            "meta.embedded.block.css": "css",
+            "source.css": "css"
+        }
+      },
+      {
+        "injectTo": [
           "source.js",
           "source.js.jsx",
           "source.jsx",
           "source.ts",
-          "source.tsx",
-          "source.vue",
-          "source.svelte",
-          "text.html"
+          "source.tsx"
         ],
-        "scopeName": "inline.es6-html",
-        "path": "./syntaxes/es6-inline-html.json",
+        "scopeName": "inline.jiji-in-html-controller",
+        "path": "./syntaxes/jiji-in-html-controller.json",
         "embeddedLanguages": {
-          "meta.embedded.block.html": "html"
+            "meta.embedded.block.html": "html",
+            "meta.embedded.block.css": "css",
+            "source.css": "css"
         }
       }
     ]

@@ -1,0 +1,203 @@
+{
+	"fileTypes": [
+        "html"
+    ],
+	"injectionSelector": "L:text.html -comment -string",
+	"injections": {
+	},
+	"patterns": [
+		{
+			"begin": " (in|click|change|close|dblclick|copy|cut|drag|dragend|dragcenter|dragleave|dragover|dragstart|drop|focus|focusout|keydown|keypress|keyup|mousedown|mouseenter|mouseleave|mousemove|mouseout|mouseover|mouseup|scroll|touchcancel|touchend|touchenter|touchleave|touchmove|touchstart)(?![\\w:-])",
+			"beginCaptures": {
+				"0": {
+					"name": "entity.other.attribute-name.html"
+				}
+			},
+			"comment": "HTML5 attributes, event handlers",
+			"end": "(?=\\s*+[^=\\s])",
+			"name": "meta.attribute.event-handler.$1.html",
+			"patterns": [
+				{
+					"begin": "=",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.separator.key-value.html"
+						}
+					},
+					"end": "(?<=[^\\s=])(?!\\s*=)|(?=/?>)",
+					"patterns": [
+						{
+							"begin": "(?=[^\\s=<>`/]|/(?!>))",
+							"end": "(?!\\G)",
+							"name": "meta.embedded.line.js",
+							"patterns": [
+								{
+									"captures": {
+										"0": {
+											"name": "source.js"
+										},
+										"1": {
+											"patterns": [
+												{
+													"include": "source.js"
+												}
+											]
+										}
+									},
+									"match": "(([^\\s\"'=<>`/]|/(?!>))+)",
+									"name": "string.unquoted.html"
+								},
+								{
+									"begin": "\"",
+									"beginCaptures": {
+										"0": {
+											"name": "punctuation.definition.string.begin.html"
+										}
+									},
+									"contentName": "source.js",
+									"end": "(\")",
+									"endCaptures": {
+										"0": {
+											"name": "punctuation.definition.string.end.html"
+										},
+										"1": {
+											"name": "source.js-ignored-vscode"
+										}
+									},
+									"name": "string.quoted.double.html",
+									"patterns": [
+										{
+											"captures": {
+												"0": {
+													"patterns": [
+														{
+															"include": "source.js"
+														}
+													]
+												}
+											},
+											"match": "([^\\n\"/]|/(?![/*]))+"
+										},
+										{
+											"begin": "//",
+											"beginCaptures": {
+												"0": {
+													"name": "punctuation.definition.comment.js"
+												}
+											},
+											"end": "(?=\")|\\n",
+											"name": "comment.line.double-slash.js"
+										},
+										{
+											"begin": "/\\*",
+											"beginCaptures": {
+												"0": {
+													"name": "punctuation.definition.comment.begin.js"
+												}
+											},
+											"end": "(?=\")|\\*/",
+											"endCaptures": {
+												"0": {
+													"name": "punctuation.definition.comment.end.js"
+												}
+											},
+											"name": "comment.block.js"
+										}
+									]
+								},
+								{
+									"begin": "'",
+									"beginCaptures": {
+										"0": {
+											"name": "punctuation.definition.string.begin.html"
+										}
+									},
+									"contentName": "source.js",
+									"end": "(')",
+									"endCaptures": {
+										"0": {
+											"name": "punctuation.definition.string.end.html"
+										},
+										"1": {
+											"name": "source.js-ignored-vscode"
+										}
+									},
+									"name": "string.quoted.single.html",
+									"patterns": [
+										{
+											"captures": {
+												"0": {
+													"patterns": [
+														{
+															"include": "source.js"
+														}
+													]
+												}
+											},
+											"match": "([^\\n'/]|/(?![/*]))+"
+										},
+										{
+											"begin": "//",
+											"beginCaptures": {
+												"0": {
+													"name": "punctuation.definition.comment.js"
+												}
+											},
+											"end": "(?=')|\\n",
+											"name": "comment.line.double-slash.js"
+										},
+										{
+											"begin": "/\\*",
+											"beginCaptures": {
+												"0": {
+													"name": "punctuation.definition.comment.begin.js"
+												}
+											},
+											"end": "(?=')|\\*/",
+											"endCaptures": {
+												"0": {
+													"name": "punctuation.definition.comment.end.js"
+												}
+											},
+											"name": "comment.block.js"
+										}
+									]
+								}
+							]
+						},
+						{
+							"match": "=",
+							"name": "invalid.illegal.unexpected-equals-sign.html"
+						}
+					]
+				}
+			]
+        },
+        {
+			"begin": "({{)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.separator.key-value.html"
+				}
+			},
+			"contentName": "source.js",
+			"end": "(}})",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.separator.key-value.html"
+				}
+			},
+			"name": "code.quoted.double.html",
+			"patterns": [
+				{
+					"include": "source.js"
+				},
+				{
+					"match": ";",
+					"name": "invalid.illegal.unexpected-equals-sign.html"
+				}
+			]
+		}
+	],
+	"scopeName": "inline.jiji-in-html"
+}

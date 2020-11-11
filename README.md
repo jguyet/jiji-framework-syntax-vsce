@@ -3,8 +3,7 @@
 
 > [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=Jguyet.jiji-framework-syntax)
 
-Adds syntax highlight support for code, placed inner javascript back quote:
-- HTML (incl. html in jiji controller)
+Adds syntax highlight support for code of jiji framework
 
 ## Installation
 
@@ -12,16 +11,36 @@ Adds syntax highlight support for code, placed inner javascript back quote:
 
 ## Usage
 
-Manage syntax for using Jiji Framework
+Manage syntax for using Jiji Framework [Jiji-js.io](https://jiji-js.io)
 
-Syntax inner back quotes of your controllers innerHTML `<div></div>` :
+Syntax html inner back quotes previoused by comment `/* html */`
+Example :
+````js
+module.exports = /* html */`
+<div></div>
+`;
+````
+
+Syntax js inner double braket code execution `{{ }}`
+````js
+module.exports = /* html */`
+<div>{{ this.title }}</div>
+`;
+````
+
+Syntax js double quotes inner properties of tag `click="this.xyz"`
+````js
+module.exports = /* html */`
+<div click="this.title = 'abc'" >{{ this.title }}</div>
+`;
+````
 
 <img src="https://github.com/jguyet/jiji-framework-syntax-vsce/raw/master/docs/1.png">
 
 ## Requirements
 
 - Visual Studio Code v1.19.0 recommended
-- Using Jiji-framework
+- Using Jiji-framework [Jiji-js.io](https://jiji-js.io)
 
 ## Keybindings
 - `ctrl+shift+p` - Search `insert jiji Controller`
