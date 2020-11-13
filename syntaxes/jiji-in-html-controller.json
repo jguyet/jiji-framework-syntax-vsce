@@ -40,7 +40,7 @@
 			]
 		},
 		{
-			"begin": " (in|click|change|close|dblclick|copy|cut|drag|dragend|dragcenter|dragleave|dragover|dragstart|drop|focus|focusout|keydown|keypress|keyup|mousedown|mouseenter|mouseleave|mousemove|mouseout|mouseover|mouseup|scroll|touchcancel|touchend|touchenter|touchleave|touchmove|touchstart)(?![\\w:-])",
+			"begin": " (load|in|click|change|close|dblclick|copy|cut|drag|dragend|dragcenter|dragleave|dragover|dragstart|drop|focus|focusout|keydown|keypress|keyup|mousedown|mouseenter|mouseleave|mousemove|mouseout|mouseover|mouseup|scroll|touchcancel|touchend|touchenter|touchleave|touchmove|touchstart)(?![\\w:-])",
 			"beginCaptures": {
 				"0": {
 					"name": "entity.other.attribute-name.html"
